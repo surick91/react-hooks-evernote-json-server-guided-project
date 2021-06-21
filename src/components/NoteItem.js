@@ -1,10 +1,21 @@
 import React from "react";
 
-function NoteItem() {
+function shortenData(data) {
+let strArray = data.split(" ")
+strArray.slice(0,8).join(" ")
+return strArray
+
+
+}
+
+function NoteItem({noteItem}) {
+  console.log({noteItem})
+
+   
   return (
     <li>
-      <h2>Title</h2>
-      <p>Caption...</p>
+      <h2>{noteItem.title}</h2>
+      <p>{shortenData(noteItem.body)}</p>
     </li>
   );
 }
